@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mortgage Calculator</title>
+  <link rel="stylesheet" href="a3.css">
+</head>
+<body>
+  <section class="main">
+  <div class="calculatorcontainer">
+    <!-- Left box -->
+    <div class="form-section">
+      <h2 style="margin-bottom: 15px;">Mortgage Calculator</h2>
+      <form >
+        <label style="color: grey;">Mortgage Amount
+          <input type="number" placeholder="£ 300,000" required>
+        </label>
+        
+        <div class="input">
+          <label>Mortgage Term
+            <input type="number"  placeholder="25" required>
+          </label>
+          <label>Interest Rate
+            <input type="number"  placeholder="5.25" step="0.01" required>
+          </label>
+        </div>
+
+        <div class="mortgage-type">
+          <label >Mortgage type<br>
+            <input type="radio"  style="margin-top: 15px;">Repayment</label>
+          <br>
+          <label><input type="radio" > Interest Only</label>
+        </div>
+
+        <button type="submit">Calculate Repayments</button>
+      </form>
+    </div>
+
+    <!-- Right box -->
+     <div>
+       <div class="result-section">
+         <h3 >Your Results</h3>
+         <p class="monthly">£1,797.74</p>
+         <p>Total you'll repay over the term: <strong>£539,322.94</strong></p>
+       </div>
+
+     </div>
+  </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,85 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.main {
+    align-items: center;
+  
+  place-content: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+background: rgb(198, 255, 253);
+  height: 100vh;
+  border-radius: 20px;
+}
+
+.calculatorcontainer {
+  display: flex;
+  background:white;
+  border-radius: 20px;
+width: 800px;
+  margin: auto;
+  font-family: arial;
+}
+
+.form-section, .result-section {
+  padding: 30px;
+  flex: 1;
+}
+
+.form-section {
+  border-radius: 30px;
+  background: #ffffff;
+}
+
+.result-section {
+  background: #122f45;
+  color: #fff;
+  height:100%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 50px;
+}
+
+input[type="number"], input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: bold;
+  color: grey;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.mortgage-type {
+  display: block;
+  margin: 10px ;
+  
+}
+
+button {
+  background: #d6e100;
+  padding: 12px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.monthly {
+  font-size: 2em;
+  color: #f5f70c;
+} 
