@@ -47,5 +47,42 @@
      </div>
   </div>
   </section>
+
+  <script>
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault(); // stop form refresh
+
+  // Get input values
+  const amount = parseFloat(document.querySelector('input[placeholder="£ 300,000"]').value);
+  const years = parseFloat(document.querySelector('input[placeholder="25"]').value);
+  const rate = parseFloat(document.querySelector('input[placeholder="5.25"]').value) / 100;
+  const type = document.querySelectorAll('input[type="radio"]')[0].checked ? "repayment" : "interestOnly";
+
+  if (isNaN(amount) || isNaN(years) || isNaN(rate)) {
+    alert("Please fill in all fields correctly.");
+    return;
+  }
+
+  const months = years * 12;
+  const monthlyRate = rate / 12;
+  let monthlyPayment, totalRepay;
+
+  if (type === "repayment") {
+    // Repayment formula: M = P * r * (1+r)^n / ((1+r)^n -1)
+    monthlyPayment = amount * monthlyRate * Math.pow(1 + monthlyRate, months) / 
+                    (Math.pow(1 + monthlyRate, months) - 1);
+    totalRepay = monthlyPayment * months;
+  } else {
+    // Interest only: monthly = principal * rate/12
+    monthlyPayment = amount * monthlyRate;
+    totalRepay = (monthlyPayment * months) + amount; // if principal is repaid at end
+  }
+
+  // Update results
+  document.querySelector(".monthly").textContent = "£" + monthlyPayment.toFixed(2);
+  document.querySelector(".result-section p strong").textContent = "£" + totalRepay.toFixed(2);
+});
+</script>
+
 </body>
 </html>
